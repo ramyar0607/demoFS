@@ -1,0 +1,61 @@
+.start-page {
+    margin-left: 20px;
+    width: 500px;
+}
+
+.sub-heading{
+    margin-bottom: 50px;
+}
+
+.list-container{
+    margin-bottom: 50px;
+}
+
+.list-div {
+    display: flex;
+    margin-bottom: 20px;
+    /* font-family: 'Avenir'; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+}
+
+.list-order {
+    background: lightblue;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 16px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #333;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.list-content {
+    width: 90%;
+}
+
+.terms{
+    display: flex;
+}
+
+.start-btn {
+    height: 40px;
+    width: 150px;
+    border-radius: 0px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: #F15C22;
+}
