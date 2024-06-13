@@ -15,49 +15,201 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Sofia"
     />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "hY-uM04iJ0vpwbIIH",
+      });
+   })();
+</script>
   </head>
 
   <body>
-    <div class="start-page">
-      <h1>Make the switch with SMUD</h1>
-      <div class="sub-heading">Use our online tool to estimate the cost to switch to a heat pump hot water heater from gas.
-        <b>Discover your out-of-pocket cost in less than 5 minutes!</b>
+    <div id="start-page">
+      <div>
+        <!-- <input id="name" value="" placeholder="name"/>
+        <input id="email" value="" placeholder="email"/> -->
+        <!-- <input id="message" value=""/> -->
+        <input id="Total_Cost" value="" placeholder="total cost"/>
+        <input id="Project_Cost" value="" placeholder="project cost"/> 
+        <!-- <button class="start-btn" onclick="sendMail()">
+          send
+        </button> -->
+        <!-- <form id="customForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <button type="submit">Submit</button>
+      </form> -->
+
+      <form id="myForm">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Submit</button>
+    </form>
+      
+
       </div>
-      <div class="list-container">
-        <div class="list-div">
+      <div>
+        <h1>Make the switch with SMUD</h1>
+        <div class="sub-heading">Use our online tool to estimate the cost to switch to a heat pump hot water heater from gas.
+          <b>Discover your out-of-pocket cost in less than 5 minutes!</b>
+        </div>
+        <div class="list-container">
+          <div class="list-div">
             <div class="list-order">1</div>
             <div class="list-content">Choose a <b>heat pump water heater size</b> based on your household.</div>
-        </div>
-        <div class="list-div">
+          </div>
+          <div class="list-div">
             <div class="list-order">2</div>
             <div class="list-content">Tell us about your <b>project cost before rebates.</b>
               Don't know the project cost yet? We're here to help.
             </div>
-        </div>
-        <div class="list-div">
+          </div>
+          <div class="list-div">
             <div class="list-order">3</div>
             <div class="list-content"><b>Get an instant estimate* on your out-of-pocket cost.</b></div>
-        </div>
-        <div class="list-div">
+          </div>
+          <div class="list-div">
             <div class="list-order">4</div>
             <div class="list-content">
-             When you're ready, we'll connect you to SMUD-approved contractors <b>through our contractor network.</b>
+              When you're ready, we'll connect you to SMUD-approved contractors <b>through our contractor network.</b>
             </div>
+          </div>
+        </div>
+        <div class="terms">
+          <div><i>* Cost estimates are based on averages, please consult with a SMUD-approved contractor before investment.</i></div>
+          <div>
+            <button class="start-btn" onclick="getToStep1()">
+              Start
+            </button>
+          </div>
         </div>
       </div>
-      <div class="terms">
-        <div>* Cost estimates are based on averages, please consult with a SMUD-approved contractor before investment.</div>
+      <div id="planet-img">
+        <img src="./assets/planet.png"/> 
+      </div>
+    </div>
+
+    <!--- step-1 start --->
+    <div id="step-1" style="display: none">
+      <div id="step-nav-link" style="margin-left: 20px;">
+        <a href=""> < Go back</a><span> Step 1 of 4</span> 
+      </div>
+      <div id="heater-sizing">
         <div>
-          <button class="start-btn">
-            Start
-          </button>
+          <h1>What size heat pump water heater do you need?</h1>
+          <div class="sub-heading">
+            Not sure yet? We can make heat pump water heater recommendations based on your current household size.
+          </div>
+          <div><span style="color: red;">*</span> Required field</div>
+          <div> <b>Household size/heat pump size</b><span style="color: red;">*</span> </div>
+          <div class="custom-select" id="customSelect">
+            <select id="mySelect" onchange="checkPlaceholder()" onfocus="this.parentElement.classList.add('focus')" onblur="this.parentElement.classList.remove('focus')" onclick="toggleDropDown()">
+              <option value="" disabled selected hidden>Please select one</option>
+              <option value="option1">1-3 people / 50-gallon</option>
+              <option value="option2">3-4 people / 65-gallon</option>
+              <option value="option3">4+ people / 80-gallon</option>
+            </select>
+          </div>
+          <div class="step-1-terms">
+            <div><i>* Cost estimates are based on averages, please consult with a SMUD-approved contractor before investment.</i></div>
+            <div>
+              <button class="start-btn" onclick="getToStep2()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="gallon-box">
+          <!-- <h3>Should I size up my heat pump water heater?</h3> -->
+          <!-- <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Household Size</th>
+                <th>Heat Pump</th>
+                <th>Gas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1-3 people</td>
+                <td>50 gallon</td>
+                <td>40 gallon</td>
+              </tr>
+              <tr>
+                <td>3-4 people</td>
+                <td>65 gallon</td>
+                <td>50 gallon</td>
+              </tr>
+              <tr>
+                <td>+4 people</td>
+                <td>80 gallon</td>
+                <td>65 gallon</td>
+              </tr>
+            </tbody>
+          </table> -->
+          <iframe src="https://smud.formstack.com/forms/rrtest_3" title="Formstack Form" width="600" height="400"></iframe> 
+
+          <div>Depending on your household’s needs, we recommend you size up your equipment. Most customers choose the 65-gallon tank (3-4 people).</div>
+      
         </div>
       </div>
     </div>
-   
+    <!--- step-1 end --->
 
-  
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./script.js"></script>
+ 
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Read input values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+
+    // Call a function to send data to Formstack
+    sendDataToFormstack(name, email);
+});
+
+function sendDataToFormstack(name, email) {
+    // Make a POST request to Formstack API to submit data to your form
+    // Replace 'form_id' with your actual Formstack form ID
+    var formstackFormId = '5795652';
+    var apiKey = 'a16af2614feb3e64a07fd10ac7bd4d36';
+    var formData = {
+        'field166975971': name,  // Replace with your form field IDs
+        'field166953603': email
+    };
+
+    fetch(`https://www.formstack.com/api/v2/form/${formstackFormId}/submission.json?oauth_token=${apiKey}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'mode': 'no-cors',
+            'Access-Control-Allow-Origin' : "*",
+            'referrer': "https://www.formstack.com/"
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Handle success response
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Handle error
+    });
+}
+
+</script>
+
 </html>
